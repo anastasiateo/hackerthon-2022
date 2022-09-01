@@ -1,0 +1,139 @@
+{% extends "base.html" %}
+{% block title %}Reduce, Reuse and Recycle{% endblock %}
+
+{% block content %}
+
+
+<div class="box-container">
+    <div class="box" data-numtype="odd">1</div>
+    <div class="box" data-numtype="even">2</div>
+    <div class="box" data-numtype="odd">3</div>
+    <div class="box" data-numtype="even">4</div>
+    <div class="box" data-numtype="odd">5</div>
+    <div class="box" data-numtype="even">6</div>
+</div>
+
+<div class="droparea" data-area-numtype="odd">
+    <h2>Drop <u>odd</u> boxes here</h2>
+</div>
+
+<div class="droparea" data-area-numtype="even">
+    <h2>Drop <u>even</u> boxes here</h2>
+</div>
+
+<div class="score-container">
+    Score: <span id="score">0</span>
+</div>
+
+<style>
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      font-family: sans-serif;
+    }
+    .box-container {
+      background: #ccc;
+      padding: 1em;
+      display: inline-block;
+      vertical-align: top;
+    }
+
+    .box {
+      display: inline-block;
+      vertical-align: top;
+      width: 60px;
+      height: 60px;
+      background: #000;
+      color: #fff;
+      font-size: 2em;
+      text-align: center;
+      transition: transform 0.15s ease;
+      border-radius: 50%;
+      padding-top: 0.3em;
+    }
+
+    .box.correct {
+      background: green;
+    }
+
+    .box.incorrect {
+      background: red;
+    }
+
+    .box.ui-draggable-dragging {
+      box-shadow: 10px 20px 30px rgba(0,0,0,0.5);
+      transform: scale(2);
+    }
+
+    .droparea {
+      background: white;
+      width: 400px;
+      height: 200px;
+      display: inline-block;
+      vertical-align: top;
+      text-align: center;
+      border: 1px solid black;
+    }
+
+    .score-container {
+      display: inline-block;
+      vertical-align: top;
+      border: none;
+      font-size: 2em;
+      padding: 1em;
+    }
+
+</style>
+
+<script>
+    $(document).ready(function(){
+
+      var score = 0;
+      var numBoxesDropped = 0;
+      var numBoxes = $('.box').length;
+
+
+      $('.box').draggable({
+        revert: true
+      });
+
+      $('.droparea').droppable({
+        accept : '.box',
+        drop : handleBoxDrop
+      });
+
+      function handleBoxDrop(event, ui){
+
+        var box = ui.draggable;
+        var boxNumType = box.attr('data-numtype');
+        var dropArea = $(this);
+        var dropAreaNumType = dropArea.attr('data-area-numtype');
+
+
+        if( boxNumType == dropAreaNumType ){
+          box.addClass('correct');
+          score++;
+        }else{
+          box.addClass('incorrect');
+        }
+
+
+        box.draggable('disable').draggable('option', 'revert', false);
+        numBoxesDropped++;
+        console.log(numBoxesDropped);
+
+
+        $('#score').text(score);
+
+
+        if(numBoxesDropped == numBoxes){
+          alert("game finished!");
+        }
+      }
+
+    });
+
+</script>
+
+{% endblock %}

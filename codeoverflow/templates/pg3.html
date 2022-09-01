@@ -1,0 +1,98 @@
+{% extends "base.html" %}
+{% block title %}Recycling{% endblock %}
+
+{% block content %}
+
+<div>
+    <h1>Recycling</h1>
+    <hr>
+    <img src="static/recycle-bin.png" width="200px" height="200px">
+    <h3>What is Recycling?</h3>
+    <p>Recycling is the process of collecting and processing materials that would otherwise be thrown away as trash <br>
+        and turning them into new products. Recycling can benefit your community and the environment.</p>
+
+    <h3>The 3 Rs of Recycling</h3>
+    <ul>
+        <li>Reduce</li>
+        <p>Reducing is choosing to use things with care to reduce the amount of waste generated.</p>
+        <li>Reuse</li>
+        <p>Reusing involves the repeated use of items which still have usable aspects.</p>
+        <li>Recycle</li>
+        <p>Recycling means the use of waste itself as resources.</p>
+    </ul>
+    <p>Waste minimization can be achieved by focusing primarily on the first of the 3Rs, "reduce,"
+        followed by "reuse" and then "recycle."</p>
+
+    <h3>What can be recycled?</h3>
+    <p><b>Paper</b></p>
+    <img src="static/open-box.png" width="50px" height="50px">
+    <p>According to an <a
+            href="https://www.epa.gov/facts-and-figures-about-materials-waste-and-recycling/national-overview-facts-and-figures-materials">article</a>
+        from the EPA, paper products make up the largest percentage (26%) of all waste
+        materials in the United States. <br> This is an upward trend that can continue to improve. Make sure to keep
+        magazines, cardboard boxes, and mail out of the trash.</p>
+    <p>Examples: Cardboard, Newspapers, Magazines and Receipts</p>
+    <p>Those <b>not recyclable</b>: Used tissues, Disposable food packaging, Diapers</p>
+    <hr>
+
+    <p><b>Plastic</b></p>
+    <img src="static/plastic-bag.png" width="50px" height="50px">
+    <p>Progress on plastic recycling has been slow in the United States. Back in 1970 less than 1% of plastic waste was
+        recycled, and that number 45 years later was only 9%. <br> Plastic places an added stressor on landfills as it can
+        take anywhere from <a
+                href="https://theconversation.com/the-plastic-waste-crisis-is-an-opportunity-for-the-us-to-get-serious-about-recycling-at-home-93254">five
+            to 600 years to break down.</a></p>
+    <p>Examples: Plastic bags, Drink bottles, Detergent and Shampoo bottles</p>
+    <p>Those <b>not recyclable</b>: Toys, Contaminated plastic packaging</p>
+    <hr>
+
+    <p><b>Glass</b></p>
+    <img src="static/wine.png" width="50px" height="50px">
+    <p>Only 1% of glass in the United States was recycled in 1970. That number slowly increased to 26% in 2015. <br> Now, it
+        presents an opportunity for additional growth. You may have jam jars, dressing containers, or drink bottles that
+        can all be rinsed and recycled.</p>
+    <p>Examples: Drink glasses, Alcohol bottles, Food jars</p>
+    <p>Those <b>not recyclable</b>: Pyrex containers, Oven-safe containers, Mirrors</p>
+    <hr>
+
+    <p><b>Metals</b></p>
+    <img src="static/medal.png" width="50px" height="50px">
+    <p>You can recycle those soup cans, soda cans, and even aluminum foil! Make sure to clean off any food particles
+        before you toss it in the recycle bin. <br> Americans currently discard about 2.7 million tons of aluminum each year
+        and only about 50% is recycled.</p>
+    <p>Examples: Beverage cans, Metal tins, Old medals</p>
+    <p>Those <b>not recyclable</b>: Electronic wastes like batteries, computers, etc, and Rusty metal items</p>
+</div>
+
+<style>
+    * {
+    text-align: center;
+    margin-top: 5px;
+    }
+
+    hr {
+    color: #92dd7a;
+    border: 2px solid #92dd7a;
+    margin-top: 0px;
+    }
+
+    img {
+    margin-top: 10px;
+    margin-bottom: 20px;
+    }
+
+    p {
+    margin-bottom: 10px;
+    }
+
+    li {
+    font-size: 18px;
+    list-style-position: inside;
+    }
+
+
+
+
+
+</style>
+{% endblock %}

@@ -102,6 +102,11 @@ def delete_user(id):
     return redirect(url_for('retrieve_users'))
 
 
+@app.route('/')
+def pg3():
+    return render_template('pg3(2).html')
+
+
 if __name__ == '__main__':
     app.run()
 
